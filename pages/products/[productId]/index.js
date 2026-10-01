@@ -3,11 +3,29 @@ import { useRouter } from "next/router";
 const ProductId = () => {
 
     const router = useRouter()
-    const {productId} = router.query
+    console.log(router.query);
 
-    return(
-        <div className="animate-bounce flex items-center justify-center mt-8 text-emerald-800 text-3xl">
-            Product : {productId}
+    const { productId } = router.query
+
+    const handlePushToDetails = () => {
+        //some action...
+        //according to response...
+        
+        
+        router.push(`${productId}/details`)
+        // router.back()
+    }
+
+    return (
+        <div className="flex flex-col mt-16 items-center justify-center text-red-800 text-3xl">
+
+            <h1 className="animate-bounce mb-16 text-amber-300">
+                Product : {productId}
+            </h1>
+
+            <button className="bg-red-400 border-2" onClick={handlePushToDetails}>
+                product : {productId} details
+            </button>
         </div>
     )
 };

@@ -1,11 +1,26 @@
+import Link from "next/link";
+
 const Products = () => {
-    return(
-        <div className="flex flex-col justify-center items-center text-sky-700 mt-8">
-            Products Page:
-            <div>product1</div>
-            <div>product2</div>
-            <div>product3</div>
-            <div>product4</div>
+    return (
+        <div className="flex flex-col justify-center items-center bg-amber-400 text-sky-700 mt-8">
+            
+            <h1 className="animate-bounce">Products Page:</h1>
+            <Link href={{
+                pathname:"/products/1",
+                query: {id:1}
+            }}>product1</Link>
+            <Link href={{
+                pathname:"/products/2",
+                query: {id:2}
+            }} replace>product2</Link>
+            <Link href={{
+                pathname:"/products/3",
+                query: {id:3}
+            }}>product3</Link>
+            <Link href={{
+                pathname:"/products/4",
+                query: {id:4}
+            }}>product4</Link>
         </div>
     )
 };
